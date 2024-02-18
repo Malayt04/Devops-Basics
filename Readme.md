@@ -95,7 +95,7 @@ Docker's lightweight nature and efficient resource utilization make it ideal for
 
 
 # Docker Architecture
-![Docker-Architecture]([https://docs.docker.com/get-started/images/docker-architecture.webp](https://imgs.search.brave.com/YWnLa2AiK0-6aVz5ZRS5Y-WeTwOfQfby2o6S7Ne8bL8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9kb2Nz/LmRvY2tlci5jb20v/Z2V0LXN0YXJ0ZWQv/aW1hZ2VzL2RvY2tl/ci1hcmNoaXRlY3R1/cmUud2VicA))
+![Docker-Architecture](https://imgs.search.brave.com/YWnLa2AiK0-6aVz5ZRS5Y-WeTwOfQfby2o6S7Ne8bL8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9kb2Nz/LmRvY2tlci5jb20v/Z2V0LXN0YXJ0ZWQv/aW1hZ2VzL2RvY2tl/ci1hcmNoaXRlY3R1/cmUud2VicA)
 
 Understanding Docker's architecture provides insight into how Docker manages containers, images, and the resources of the host system. Docker's architecture is designed to be modular, allowing for flexibility and scalability across various environments. Let's delve into the details of Docker's architecture:<br><br>
 
@@ -128,6 +128,41 @@ Here's how it works:<br>
 Suppose you are containerizing a nodejs application. You have to specify on which version of node will the application run or on which operatiing system it should run which are already predefined images in the docker registry. These are known as the base images.
 <br>
 ### Specify instruction:
+In the Dockerfile, you specify a series of instructions, such as copying files, installing software, setting environment variables, and defining runtime commands. These instructions are written in a clear, human-readable format.
+<br>
+### Build the image:
+Once you have written the Dockerfile, you use the <b>docker build</b> command to build the Docker image based on the instructions in the file. Docker reads the Dockerfile and executes each instruction to create the image.
+
+Here is an expample of a dockerfile for a nodejs application:
+
+```Dockerfile
+FROM node:lts-alpine
+
+# Set Node.js environment to production
+ENV NODE_ENV=production
+
+# Set the working directory
+WORKDIR /usr/src/app
+
+# Copy package.json, package-lock.json, and npm-shrinkwrap.json files
+COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
+
+# Install production dependencies
+RUN npm install --production --silent && mv node_modules ../
+
+# Copy application files
+COPY . .
+
+# Expose port 3000
+EXPOSE 3000
+
+# Set user permissions
+RUN chown -R node /usr/src/app
+USER node
+
+# Command to run the application
+CMD ["node", "app.js"]
+```
 
 
 
