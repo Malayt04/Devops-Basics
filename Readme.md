@@ -95,7 +95,7 @@ Docker's lightweight nature and efficient resource utilization make it ideal for
 
 
 # Docker Architecture
-![Docker-Architecture](https://docs.docker.com/get-started/images/docker-architecture.webp)
+![Docker-Architecture]([https://docs.docker.com/get-started/images/docker-architecture.webp](https://imgs.search.brave.com/YWnLa2AiK0-6aVz5ZRS5Y-WeTwOfQfby2o6S7Ne8bL8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9kb2Nz/LmRvY2tlci5jb20v/Z2V0LXN0YXJ0ZWQv/aW1hZ2VzL2RvY2tl/ci1hcmNoaXRlY3R1/cmUud2VicA))
 
 Understanding Docker's architecture provides insight into how Docker manages containers, images, and the resources of the host system. Docker's architecture is designed to be modular, allowing for flexibility and scalability across various environments. Let's delve into the details of Docker's architecture:<br><br>
 
@@ -120,6 +120,15 @@ In the previous topic you saw some terms like images, volumes etc. These are all
 A docker image is a file that defines a docker container. It is the tampelate containing the filesystem of the containarized application and its dependencies. Imagine it as a class in Object Oriented Programming. This will make  you understand better. Containers are the instances of these docker images. Think of them as the object of a particular class. Now I hope the relation between an image and a container is clear to you.
 
 ## Docker File:
+Docker file is a file that we create which contains the step of instruction that will execute when you run a container in your local system. Let's take an example to understand it better:<br>
+Let's imagine you're building a model airplane from a kit. The kit comes with a set of instructions that tell you how to assemble the airplane step by step. You follow these instructions to ensure that the airplane is built correctly. a Dockerfile is like those instructions for building a containerized application. It's a simple text file that contains a set of instructions, known as commands, that specify how to build a Docker image.<br><br>
+
+Here's how it works:<br>
+### Choosing a base image:
+Suppose you are containerizing a nodejs application. You have to specify on which version of node will the application run or on which operatiing system it should run which are already predefined images in the docker registry. These are known as the base images.
+<br>
+### Specify instruction:
+
 
 
 
