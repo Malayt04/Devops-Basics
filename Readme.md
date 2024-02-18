@@ -68,7 +68,34 @@ In summary, VMs are used for running applications that require specific hardware
 ![COntainers vs Vm's](https://www.netapp.com/media/Screen-Shot-2018-03-20-at-9.24.09-AM_tcm19-56643.png)
 
 
-<br>Now let's talk about docker, a container manager.
+
+# Day 2
+
+
+# Gerting Started With Docker:
+
+We have heard a very common  saying of developers "It was running on my system" due to differences between local machines. Let's see how docker resolves this issue.<br><br>
+
+# What is Docker
+At its core, Docker is a platform that enables developers to package, distribute, and run applications in isolated containers. These containers encapsulate everything an application needs to run, including code, runtime, system tools, libraries, and settings.
+
+## Why Docker:
+Docker simplifies the process of software development and deployment by providing a consistent environment across different platforms. Here are some key reasons why Docker has become indispensable in modern software development:<br><br>
+#### Portability: 
+Docker containers can run on any machine that supports Docker, regardless of the underlying operating system. This portability eliminates the notorious "it works on my machine" problem, ensuring consistency across development, testing, and production environments.
+
+#### Isolation: 
+Docker containers offer lightweight, isolated environments for running applications. Each container operates independently of others, preventing conflicts between dependencies and enabling efficient resource utilization.
+
+#### Scalability: 
+Docker simplifies the scaling of applications by allowing developers to replicate containers across multiple hosts. This flexibility enables seamless scaling up or down based on demand, ensuring optimal performance and resource utilization.
+
+#### Efficiency:
+Docker's lightweight nature and efficient resource utilization make it ideal for microservices architectures and cloud-native applications. By breaking down monolithic applications into smaller, manageable components, developers can achieve greater agility, scalability, and resilience.
+
+
+
+
 
 
 
