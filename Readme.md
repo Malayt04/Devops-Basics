@@ -94,6 +94,34 @@ Docker simplifies the scaling of applications by allowing developers to replicat
 Docker's lightweight nature and efficient resource utilization make it ideal for microservices architectures and cloud-native applications. By breaking down monolithic applications into smaller, manageable components, developers can achieve greater agility, scalability, and resilience.
 
 
+# Docker Architecture
+![Docker-Architecture](https://docs.docker.com/get-started/images/docker-architecture.webp)
+
+Understanding Docker's architecture provides insight into how Docker manages containers, images, and the resources of the host system. Docker's architecture is designed to be modular, allowing for flexibility and scalability across various environments. Let's delve into the details of Docker's architecture:<br><br>
+
+## Docker Daemon
+The Docker daemon runs as a background process on the host machine and is responsible for managing Docker objects such as containers, images, networks, and volumes. It listens for Docker API requests and executes them, handling container lifecycle management, image handling, networking, and storage operations.
+
+## Docker Client:
+This is what we use to interact with docker. It is a command line tool. Users issues a command to performing various docker operations such as creating managing and inspecting containers. The Docker client communicates with the Docker daemon via the Docker API, enabling users to control Docker's behavior and manage containerized applications.
+
+## Docker regestiry:
+It is a place where all the docker images are stored. Its just like github but for docker containers. You can pull an image made my someone else and also can upload your own image. You can check out the website (hub.docker.com) for more info and hands on.
+
+## Docker Engine API:
+The Docker Engine API is a RESTful API that exposes endpoints for interacting with the Docker daemon. The API enables programmatic access to Docker's functionality, allowing developers to integrate Docker into their applications and automate container management tasks. The Docker Engine API is used by the Docker client, Docker Compose, and other Docker-compatible tools to interact with the Docker daemon.
+
+
+# Docker Objectes 
+
+In the previous topic you saw some terms like images, volumes etc. These are all docker objects. Let's discuss then in detail:
+
+## Images:
+A docker image is a file that defines a docker container. It is the tampelate containing the filesystem of the containarized application and its dependencies. Imagine it as a class in Object Oriented Programming. This will make  you understand better. Containers are the instances of these docker images. Think of them as the object of a particular class. Now I hope the relation between an image and a container is clear to you.
+
+## Docker File:
+
+
 
 
 
