@@ -203,4 +203,85 @@ docker run <image-name>
 //Eg: docker run nginx
 ```
 
+- We can also pass a complete `.env` file
+
+```bash
+--env-file <path-to-env-file>
+Eg: --env-file ./.env
+```
+
+### Docker Container
+
+- To stop a running container
+
+```bash
+docker stop <container-ID/name>
+``` 
+
+- To resume a stopped container
+
+```bash
+docker start <container-ID/name>
+```
+
+- To check the running processes inside a container.
+
+```bash
+docker top <container-name/id>
+```
+
+- To check stats of running container.
+
+```bash
+docker stats <container-name/id>
+```
+
+- Check the config and info of a container.
+
+```bash
+docker inspect <container-name/id>
+//Eg: docker inspect mynginx
+```
+
+- Check all the container running.
+
+```bash
+docker ps
+or
+docker container ls
+```
+
+- To start and interactive session and attach terminal with the container.
+
+  - NOTE: every image does not support `bash` so we should use `sh`
+
+```
+docker exec -it <container-ID/name> bash/sh
+```
+
+- To check which ports has been exposed and forwarded
+
+```bash
+docker port <image-name>
+```
+
+- To check all the containers (stopped, paused and running)
+
+```bash
+docker ps -a
+```
+
+- Check logs of a container
+
+```bash
+docker logs <container-ID/name>
+```
+
+- Delete all the stopped containers
+
+```bash
+docker container prune -f
+```
+
+
 
