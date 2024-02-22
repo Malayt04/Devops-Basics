@@ -167,8 +167,40 @@ CMD ["node", "app.js"]
 <br><br>
 
 # Docker Commands
+ Now let's discuss some basic docker commands which will help you get started:<br>
 
+- To check Docker vesrion
 
+```
+docker version
+```
 
+- To check all the available images
+
+```bash
+docker images
+```
+
+- Pull/Download the image from the Docker registry to local machine.
+
+```bash
+docker pull <image name>
+//Eg: docker pull nginx
+```
+
+- To run an container (It will 1st pull the image if not present in the local sytem)
+  - NOTE: When we just provide the name of the image it will pull the latest one, i.e `nginx:latest`. We can also specify the version `nginx:1.14`
+  - Additioanly we can use flags
+  
+     - `--name <name> `- To give a name to the container.
+     - `-p <Host port:container port>`- To forward the port.
+     - `-d` - To run in detached mode
+     - `-it` - For interactive envirnoment
+     - `-e` - For environment variable
+
+```bash
+docker run <image-name>
+//Eg: docker run nginx
+```
 
 
