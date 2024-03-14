@@ -39,7 +39,9 @@ User processes encompass the myriad applications and programs that users interac
 In essence, the architecture of Linux embodies a symbiotic relationship between its core components, facilitating a seamless interaction between hardware and software while prioritizing performance, security, and flexibility.
 
 # Conclusion
-Linux continues to exert a profound influence on the computing landscape, empowering users with a powerful, customizable, and secure operating system that caters to a diverse range of needs and preferences. By understanding its architecture and appreciating its myriad benefits, individuals and organizations can harness the full potential of Linux to drive innovation, productivity, and success in the digital age. Whether you're a seasoned sysadmin, a budding developer, or an avid enthusiast, Linux offers a compelling platform for exploration, experimentation, and mastery.
+Linux continues to exert a profound influence on the computing landscape, empowering users with a powerful, customizable, and secure operating system that caters to a diverse range of needs and preferences. By understanding its architecture and appreciating its myriad benefits, individuals and organizations can harness the full potential of Linux to drive innovation, productivity, and success in the digital age. Whether you're a seasoned sysadmin, a budding developer, or an avid enthusiast, Linux offers a compelling platform for exploration, experimentation, and mastery.<br>
+
+Now let's look at some of the linux commands 
 
 # Linux Commands for beginners
 
