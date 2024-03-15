@@ -179,4 +179,43 @@ history
 - `printevnv` - to print all th env.
 
 
+# AWS Project using SHELL SCRIPTING
+
+### How can I automate the generation of a resource usage report from AWS services (EC2, S3, Lambda, IAM) using a shell script.
+
+```
+#!/bin/bash
+
+####################
+# Author: Malay
+# Date: 15-03-2024
+# Version: v1
+# Desc: This script will report the aws resource usage
+#####################
+
+#AWS S3
+#AWS EC2
+#AWS Lamda
+#AWS IAM Users
+
+set -x
+
+# List S3 buckets
+aws s3 ls
+
+#List EC2 instance
+aws ec2 describe-instances
+
+#list lambda
+aws lambda list-functions 
+
+#list IAM users
+aws iam list-users
+
+
+
+```
+
+### As a devops engineer, you maintain a lot of github repo and for eacch repo, you make sure proper access is granted so as a devops engineer, how can you list who has access to the repo automate this with shell script.
+
 
