@@ -218,4 +218,50 @@ aws iam list-users
 
 ### As a devops engineer, you maintain a lot of github repo and for eacch repo, you make sure proper access is granted so as a devops engineer, how can you list who has access to the repo automate this with shell script.
 
+```
+#!/bin/bash
 
+# GitHub API URL
+API_URL="https://api.github.com"
+
+# GitHub username and personal access token
+USERNAME=$username
+TOKEN=$token
+
+# User and Repository information
+REPO_OWNER=$1
+REPO_NAME=$2
+
+# Function to make a GET request to the GitHub API
+function github_api_get {
+    local endpoint="$1"
+    local url="${API_URL}/${endpoint}"
+
+    # Send a GET request to the GitHub API with authentication
+    curl -s -u "${USERNAME}:${TOKEN}" "$url"
+}
+
+# Function to list users with read access to the repository
+function list_users_with_read_access {
+    local endpoint="repos/${REPO_OWNER}/${REPO_NAME}/collaborators"
+
+    # Fetch the list of collaborators on the repository
+    collaborators="$(github_api_get "$endpoint" | jq -r '.[] | select(.permissions.pull == true) | .login')"
+
+    # Display the list of collaborators with read access
+    if [[ -z "$collaborators" ]]; then
+        echo "No users with read access found for ${REPO_OWNER}/${REPO_NAME}."
+    else
+        echo "Users with read access to ${REPO_OWNER}/${REPO_NAME}:"
+        echo "$collaborators"
+    fi
+}
+
+# Main script
+
+echo "Listing users with read access to ${REPO_OWNER}/${REPO_NAME}..."
+list_users_with_read_access
+```
+
+Let me explain you this script in detail.<br>
+Till now we are famillier with the first linel secondly stored api url in a variable. In the third part we have taken username and token from the user. YOu can generate these tokens for yourself by going to the settings tab in GitHub. In this script, we are not hard coding the values o username and password. Rather, we are taking them dynamically. This can be done by typing <b>export username="username" token="token"</b> just before executing the script. Simillary in the next part we are accepting repo owner and name in the form of command line arguments. The first function is very easy as it is just forming the url to the github repo with the information that we have taken from the user and sending the get request.
